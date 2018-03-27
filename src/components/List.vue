@@ -1,7 +1,7 @@
 <template>
 <section>
     <div class="container-row">
-      <div id="liste" class="container-col" >
+      <div id="liste" class="container-wrap" >
         <Character v-for="character in characters" :key="character.id" :character="character"/>
       </div>
     </div>
@@ -44,17 +44,19 @@ export default {
   display : flex;
   flex-direction: row;
   justify-content: center;
+}
 
+.container-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 #liste{
-  width: 500px;
-  height: 1900px;
+  width: 1050px;
+  height: 1600px;
   margin-top: 50px;
 }
 
- #nom {
-  width: 420px;
-  background-color: rgba(0, 0, 0, 0.8);
-}
 </style>

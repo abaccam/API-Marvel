@@ -25,11 +25,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-image: url("./assets/marvel-background.jpg");
+  background-color: #f1f2f0;
 }
 #nav{
-  background-color: rgba(0, 0, 0, 0.9);
-  height: 130px;
+  background-color: #e92227;
+  height: 90px;
 }
 img{
   width: 20%;

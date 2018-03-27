@@ -1,23 +1,23 @@
 <template>
   <section>
-    <div id="lignes" class="container-row">
+    <div id="lignes" class="container-col">
       <div id="image" 
       v-bind:style="{ backgroundImage: 
       'url(' + character.thumbnail.path + '.' + character.thumbnail.extension + ')' }">
       </div>
-      <div id="nom">
+      <div id="nom" class="container-row">
         <h1 @click="characterData=true">{{character.name}}</h1>
       </div>
     </div>
 
     <div class="modal-body" v-if="characterData" id="modal">
       <div class="container-fluid">
-        <div class="row">
+        <!-- <div class="row">
           <div id="characPic" class="col-md-6" v-bind:style="{ backgroundImage: 'url(' + character.thumbnail.path + '.' + character.thumbnail.extension + ')' }"></div>
           <div id="modalName" class="col-md-6 ml-auto">{{character.name}}</div>
-        </div>
+        </div> -->
         <div class="row">
-          <div class="col-md-12 sl-auto">{{character.description}} Comics:{{character.comics.available}}</div>
+          <div class="col-md-12 sl-auto">{{character.description}} Comics : {{character.comics.available}}</div>
         </div>
         <div class="row">
          <div class="col-md-12 ml-auto" 
@@ -54,6 +54,7 @@ export default {
   display : flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 }
 
 .container-col {
@@ -63,38 +64,40 @@ export default {
 }
 
 #lignes{
-  justify-content: flex-start;
-  border: 3px solid rgb(255, 255, 255);
-  width:500px;
-  height:80px; 
+  width:254px;
+  height:300px; 
+  border-radius: 2%;
 }
 
 #lignes:hover{
-    border: 4px solid #e92227;
+    border: 2px solid #e92227;
 
 }
 
 #image {
-  border: 3px solid black;
-  width: 145px;
+  width: 250px;
+  height: 250px;
   background-size: cover;
-
+  border-radius: 2% 2% 0% 0%;
 }
 
 #nom {
-  /* border: 1px solid white; */
-  width: 420px;
+  background-color:white;
+  border: 1px solid rgba(180, 180, 180, 0.781);
+  width: 250px;
+  height: 80px;
+  border-radius: 0% 0% 2% 2%;
 }
 
+
 h1{
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
-  color:white;
+  color:black;
 }
 
 h1:hover{
   font-size: 25px;
-  text-align: center;
   color:#e92227;
 }
 
@@ -105,6 +108,7 @@ h1:hover{
 }
 
 #modal{
+  width: 250px;
   background-color: white;
 }
 
@@ -112,8 +116,6 @@ h1:hover{
   width: 200px;
   height: 150px;
   background-size: cover;
-  border:1px solid grey;
-
 }
 
 </style>
